@@ -1,6 +1,6 @@
 # nix-easyroam
 
-This module allows you to declaratively set up easyroam using either `wpa_supplicant` or `NetworkManager`. It does so by using a systemd service that extracts the `pkcs` file on startup, similar to how `sops-nix` sets up its secrets. If you dont care about the declarative part, maybe have a look at the [official app](https://search.nixos.org/packages?channel=unstable&show=easyroam-connect-desktop). It only supports `NetworkManager` though.
+This module allows you to declaratively set up easyroam using either `wpa_supplicant` or `NetworkManager`. It does so by using a systemd service that extracts the `pkcs` file on startup. If you dont care about the declarative part, maybe have a look at the [official app](https://search.nixos.org/packages?channel=unstable&show=easyroam-connect-desktop). It only supports `NetworkManager` though.
 
 The extracted Common Name/Root Certificate/Client Certificate/Private Key end up in `/run/easyroam/`, so you
 can use them externally.
