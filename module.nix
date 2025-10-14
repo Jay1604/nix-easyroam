@@ -206,7 +206,7 @@ in
           )}
 
           # common name
-          $openssl pkcs12 -in "${cfg.pkcsFile}" -passin pass: -nokeys | $openssl x509 -noout -subject | $sed -rn 's/.*\/CN=(.*)\/C.*/\1/gp' > ${cfg.paths.commonName}
+          $openssl pkcs12 -in "${cfg.pkcsFile}" -passin pass: -nokeys | $openssl x509 -noout -subject | $sed -e 's/.*=//' -e 's/\s*//' > ${cfg.paths.commonName}
             
           # root cert
           $openssl pkcs12 -in "${cfg.pkcsFile}" -passin pass: -nokeys -cacerts > ${cfg.paths.rootCert}
