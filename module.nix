@@ -294,7 +294,7 @@ in
 
       networking.wireless = lib.mkIf cfg.wpa-supplicant.enable {
         allowAuxiliaryImperativeNetworks = true;
-        userControlled.enable = true;
+        userControlled = true;
       };
     };
 }
